@@ -51,7 +51,7 @@ Conecte o sensor VL53L0X à Raspberry Pi Pico utilizando a interface I2C0, confo
 Este projeto já está configurado para a extensão oficial, tornando o processo muito simples.
 
 1.  **Abra o Projeto:** Abra a pasta raiz do projeto no Visual Studio Code.
-2.  **Prepare a Placa:** Coloque a Raspberry Pi Pico em modo **BOOTSEL** (pressione e segure o botão BOOTSEL enquanto conecta o cabo USB). Você só precisa fazer isso na primeira vez que usar a tarefa "Run".
+2.  **Prepare a Placa:** Coloque a Raspberry Pi Pico em modo **BOOTSEL** (pressione e segure o botão BOOTSEL enquanto conecta o cabo USB).
 3.  **Envie o Código:** Clique no botão **`Run`** na barra de status ou use o atalho. A extensão irá compilar o código e enviá-lo automaticamente para a placa usando o `picotool`.
 6.  **Visualize a Saída:** Abra o monitor serial integrado do VS Code para ver as medições de distância.
 
