@@ -1,73 +1,71 @@
-# VL53L0X Laser Distance Sensor with Raspberry Pi Pico
+# Sensor de Distância a Laser VL53L0X com Raspberry Pi Pico
 
-This repository contains a C example for using the VL53L0X Time-of-Flight (ToF) laser distance sensor with the Raspberry Pi Pico board.
+Este repositório contém um projeto em C para utilizar o sensor de distância a laser Time-of-Flight (ToF) VL53L0X com a placa Raspberry Pi Pico.
+## 📋 Índice
 
-## 📋 Table of Contents
+- [Funcionalidades](#-funcionalidades)
+- [Hardware Necessário](#-hardware-necessário)
+- [Software e Dependências](#-software-e-dependências)
+- [Conexões](#-conexões)
+- [Como Compilar e Executar](#-como-compilar-e-executar)
+  - [Usando o VS Code com a Extensão Raspberry Pi Pico (Recomendado)](#usando-o-vs-code-com-a-extensão-raspberry-pi-pico-recomendado)
+  - [Usando a Linha de Comando](#usando-a-linha-de-comando)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Autor](#-autor)
+- [Licença](#-licença)
 
-- [Features](#-features)
-- [Hardware Required](#-hardware-required)
-- [Software and Dependencies](#-software-and-dependencies)
-- [Connections](#-connections)
-- [How to Compile and Run](#-how-to-compile-and-run)
-  - [Using VS Code with the Raspberry Pi Pico Extension (Recommended)](#using-vs-code-with-the-raspberry-pi-pico-extension-recommended)
-  - [Using the Command Line](#using-the-command-line)
-- [Project Structure](#-project-structure)
-- [Author](#-author)
-- [License](#-license)
+## ✨ Funcionalidades
 
-## ✨ Features
+-   Integração com o sensor de distância a laser VL53L0X.
+-   Leitura contínua da distância em milímetros.
+-   Comunicação via I2C com a Raspberry Pi Pico.
+-   Projeto configurado para fácil compilação com o SDK do Raspberry Pi Pico e CMake.
 
--   Integration with the VL53L0X laser distance sensor.
--   Continuous distance reading in millimeters.
--   Communication via I2C with the Raspberry Pi Pico.
--   Sensor model and revision check to ensure a correct connection.
--   Project configured for easy compilation with the Raspberry Pi Pico SDK and CMake.
+## 🛠️ Hardware Necessário
 
-## 🛠️ Hardware Required
+-   **Raspberry Pi Pico** ou **Pico W**
+-   **Sensor de Distância a Laser VL53L0X**
+-   **Cabos/Jumpers** para conexão
 
--   **Raspberry Pi Pico** or **Pico W**
--   **VL53L0X Laser Distance Sensor**
--   **Jumper Wires** for connection
-
-## 📦 Software and Dependencies
+## 📦 Software e Dependências
 
 -   **Visual Studio Code**
--   **Raspberry Pi Pico/W Extension for VS Code**
--   **Raspberry Pi Pico SDK**, **ARM GCC Compiler**, and **CMake**
+-   **Extensão Raspberry Pi Pico/W para VS Code**
+-   **Raspberry Pi Pico SDK**, **ARM GCC Compiler** e **CMake**
 
-## 🔌 Connections
+## 🔌 Conexões
 
-Connect the VL53L0X sensor to the Raspberry Pi Pico using the I2C0 interface, as defined in the `src/sensor-distancia-laser.c` file:
+Conecte o sensor VL53L0X à Raspberry Pi Pico utilizando a interface I2C0, conforme definido no arquivo `src/sensor-distancia-laser.c`:
 
-| VL53L0X Pin | Raspberry Pi Pico Pin | Description |
-| :---------- | :-------------------- | :---------- |
-| **VIN** | **3.3V (OUT)** | Power       |
-| **GND** | **GND** | Ground      |
-| **SCL** | **GP1 (I2C0 SCL)** | I2C Clock   |
-| **SDA** | **GP0 (I2C0 SDA)** | I2C Data    |
+| Pino do VL53L0X | Pino da Raspberry Pi Pico | Descrição        |
+| :-------------- | :------------------------ | :--------------- |
+| **VIN** | **3V3 (OUT)**   | Alimentação      |
+| **GND** | **GND**        | Terra            |
+| **SCL** | **GP1 (I2C0 SCL)**  | Clock do I2C     |
+| **SDA** | **GP0 (I2C0 SDA)** | Dados do I2C     |
 
-## 🚀 How to Compile and Run
+## 🚀 Como Compilar e Executar
 
-### Using VS Code with the Raspberry Pi Pico Extension (Recommended)
+### Usando o VS Code com a Extensão Raspberry Pi Pico (Recomendado)
 
-This project is already configured for the official extension, making the process very simple.
+Este projeto já está configurado para a extensão oficial, tornando o processo muito simples.
 
-1.  **Open Project:** Open the project's root folder in Visual Studio Code.
-2.  **Prepare the Board:** Put the Raspberry Pi Pico into **BOOTSEL** mode (press and hold the BOOTSEL button while connecting the USB cable).
-3.  **Upload the Code:** Click the **`Run`** button on the status bar. The extension will compile the code and automatically upload it to the board using `picotool`.
-4.  **View the Output:** Open the integrated serial monitor in VS Code to see the distance measurements.
+1.  **Abra o Projeto:** Abra a pasta raiz do projeto no Visual Studio Code.
+2.  **Prepare a Placa:** Coloque a Raspberry Pi Pico em modo **BOOTSEL** (pressione e segure o botão BOOTSEL enquanto conecta o cabo USB). Você só precisa fazer isso na primeira vez que usar a tarefa "Run".
+3.  **Envie o Código:** Clique no botão **`Run`** na barra de status ou use o atalho. A extensão irá compilar o código e enviá-lo automaticamente para a placa usando o `picotool`.
+6.  **Visualize a Saída:** Abra o monitor serial integrado do VS Code para ver as medições de distância.
 
-### Using the Command Line
+### Usando a Linha de Comando
 
-If you prefer not to use VS Code, you can compile manually.
+Se preferir não usar o VS Code, você pode compilar manualmente.
 
-1.  **Clone the repository:**
+1.  **Clone o repositório:**
     ```bash
-    git clone <YOUR_REPOSITORY_URL>
-    cd <FOLDER_NAME>
+    git clone <URL_DO_SEU_REPOSITORIO>
+    cd <NOME_DA_PASTA>
     ```
-2.  **Create and configure the build:**
-    * Make sure the `PICO_SDK_PATH` environment variable points to your SDK directory.
+2.  **Crie e configure o build:**
+    * Certifique-se de que a variável de ambiente `PICO_SDK_PATH` aponta para o diretório do seu SDK.
     ```bash
     mkdir build
     cd build
@@ -77,8 +75,30 @@ If you prefer not to use VS Code, you can compile manually.
     ```bash
     make
     ```
-4.  **Upload the firmware (`.uf2`):**
-    -   Put the Pico in **BOOTSEL** mode.
-    -   Copy the `build/sensor-distancia-laser.uf2` file to the drive that the Pico mounted on your system.
+4.  **Carregue o firmware (`.uf2`):**
+    -   Coloque a Pico em modo **BOOTSEL**.
+    -   Copie o arquivo `build/sensor-distancia-laser.uf2` para o drive que a Pico montou no seu sistema.
 
-## 📂 Project Structure
+## 📂 Estrutura do Projeto
+
+```
+.
+├── .vscode/               # Arquivos de configuração do Visual Studio Code para a extensão
+├── build/                 # Diretório (ignorado) onde os arquivos de compilação são gerados
+├── inc/                   # Arquivos de cabeçalho (.h)
+│   └── tof.h
+├── src/                   # Arquivos de código-fonte (.c)
+│   ├── sensor-distancia-laser.c
+│   └── tof.c
+├── .gitignore             # Arquivos e pastas ignorados pelo Git
+├── CMakeLists.txt         # Arquivo de configuração do CMake para o projeto
+├── LICENSE                # Licença do projeto
+└── pico_sdk_import.cmake  # Script para importar o SDK do Pico
+```
+
+## 👨‍💻 Autores
+
+-   **thalyssonDEV**
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
