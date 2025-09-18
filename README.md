@@ -2,6 +2,9 @@
 
 Este repositório contém um projeto em C para utilizar o sensor de distância a laser VL53L0X com a placa Raspberry Pi Pico.
 
+> ⚠️ **Observação:** Para detalhes maiores e aprofundados do uso do sensor, veja documentação com explicações e datasheet de referência [Sensor de Distância a Laser ](https://www.notion.so/labiras/Sensor-de-Dist-ncia-a-Laser-VL530X-25d67aa65953805eb8abe4d0d0e810f8).
+---
+
 
 ## ✨ Funcionalidades
 
