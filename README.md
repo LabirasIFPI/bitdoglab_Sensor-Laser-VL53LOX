@@ -1,18 +1,7 @@
 # Sensor de Distância a Laser VL53L0X com Raspberry Pi Pico
 
-Este repositório contém um projeto em C para utilizar o sensor de distância a laser Time-of-Flight (ToF) VL53L0X com a placa Raspberry Pi Pico.
-## 📋 Índice
+Este repositório contém um projeto em C para utilizar o sensor de distância a laser VL53L0X com a placa Raspberry Pi Pico.
 
-- [Funcionalidades](#-funcionalidades)
-- [Hardware Necessário](#-hardware-necessário)
-- [Software e Dependências](#-software-e-dependências)
-- [Conexões](#-conexões)
-- [Como Compilar e Executar](#-como-compilar-e-executar)
-  - [Usando o VS Code com a Extensão Raspberry Pi Pico (Recomendado)](#usando-o-vs-code-com-a-extensão-raspberry-pi-pico-recomendado)
-  - [Usando a Linha de Comando](#usando-a-linha-de-comando)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Autores](#-autores)
-- [Licença](#-licença)
 
 ## ✨ Funcionalidades
 
@@ -85,20 +74,16 @@ Se preferir não usar o VS Code, você pode compilar manualmente.
 .
 ├── .vscode/               # Arquivos de configuração do Visual Studio Code para a extensão
 ├── build/                 # Diretório (ignorado) onde os arquivos de compilação são gerados
-├── inc/                   # Arquivos de cabeçalho (.h)
-│   └── tof.h
-├── src/                   # Arquivos de código-fonte (.c)
-│   ├── sensor-distancia-laser.c
-│   └── tof.c
+├── sensor-distancia-laser.c
+├── tof.c
+├── tof.h
 ├── .gitignore             # Arquivos e pastas ignorados pelo Git
 ├── CMakeLists.txt         # Arquivo de configuração do CMake para o projeto
 ├── LICENSE                # Licença do projeto
 └── pico_sdk_import.cmake  # Script para importar o SDK do Pico
 ```
 
-## 👨‍💻 Autores
 
--   **thalyssonDEV**
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
